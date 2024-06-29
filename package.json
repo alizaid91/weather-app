@@ -1,0 +1,13 @@
+{
+    "name": "wether-app",
+    "version": "1.0.0",
+    "description": "A weather app using serverless functions",
+    "main": "index.js",
+    "scripts": {
+      "start": "vercel dev"
+    },
+    "dependencies": {
+      "node-fetch": "^2.6.1"
+    }
+  }
+  
