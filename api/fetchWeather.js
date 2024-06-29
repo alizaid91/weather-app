@@ -1,5 +1,4 @@
-// api/fetchWeather.js
-
+require('dotenv').config();
 const fetch = require('node-fetch');
 
 module.exports = async (req, res) => {
