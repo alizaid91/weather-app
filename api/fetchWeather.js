@@ -24,7 +24,7 @@ module.exports = async (req, res) => {
 
         res.status(200).json(responses);
     } catch (error) {
-        console.error(error);
+        console.error("Error fetching weather data:", error);
         res.status(500).json({ error: 'Failed to fetch weather data' });
     }
 };

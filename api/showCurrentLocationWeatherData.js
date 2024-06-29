@@ -16,7 +16,7 @@ module.exports = async (req, res) => {
         const info = await response.json();
         res.status(200).json(info);
     } catch (error) {
-        console.error("An error occurred:", error);
+        console.error("Error fetching weather data:", error);
         res.status(500).json({ error: 'Failed to fetch weather data' });
     }
 };
