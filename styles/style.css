@@ -1,0 +1,210 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  padding-top: 80px;
+  font-family: "Roboto", sans-serif;
+}
+
+.search-box-container {
+  background-color: rgba(255, 255, 255, 0.336);
+  backdrop-filter: blur(5px);
+  padding: .5rem .5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* flex-wrap: wrap; */
+  gap: 1rem;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.404);
+  z-index: 9999;
+}
+
+.search-box-container > :first-child > div{ 
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  overflow: hidden;
+  /* border: 1px solid black; */
+}
+
+.search-box-container > :first-child > div > img{
+  width: 100%;
+  height: 100%;
+}
+
+.search-box-container input {
+  flex-grow: 1;
+  padding: 1rem;
+  border-radius: 4rem;
+  border: none;
+  border: 1px solid rgba(0, 0, 0, 0.397);
+  box-shadow: 3px 3px 9px rgba(128, 128, 128, 0.548);
+  flex-grow: 1;
+}
+
+.search-box-container input::placeholder {
+  font-size: 18px;
+}
+
+.search-box-container span {
+  color: black;
+  font-weight: bold;
+  font-size: 38px;
+  cursor: pointer;
+  transition: scale 0.65s, background-color 0.15s;
+  /* border: 1px solid red; */
+}
+
+.search-box-container span:hover {
+  scale: 1.3;
+  transition: scale 0.25s;
+}
+
+.container {
+  /* background-color: crimson; */
+  /* width: 100%; */
+  margin: 2rem;
+  overflow-x: scroll;
+}
+
+.container h1{
+    font-size: 2rem;
+}
+
+.india-popular-places-weather,
+.world-polular-places-weather {
+  margin-top: 10px;
+  margin-bottom: 40px;
+  /* border: 1px solid black; */
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.weather-card {
+  padding: 20px;
+  position: relative;
+  background-image: url(https://cdn.pixabay.com/photo/2020/02/02/17/23/travel-4813654_640.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.weather-card::after {
+  content: "";
+  background-color: rgba(0, 0, 0, 0.616);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.city-name-time {
+  /* border: 1px solid rgb(2, 255, 2); */
+  margin-bottom: 10px;
+  color: white;
+  position: relative;
+  z-index: 999;
+}
+
+.city-name-time p {
+  font-size: 1.3rem;
+  text-wrap: nowrap;
+  color: rgb(197, 197, 197);
+}
+
+.city-name-time h1 {
+  font-size: 34px;
+  margin-top: 2px;
+}
+
+.temp {
+  display: flex;
+  /* border: 1px solid yellow; */
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  color: white;
+  position: relative;
+  z-index: 999;
+}
+
+.temp  p {
+  font-size: 4.4rem;
+  font-weight: bold;
+}
+
+.temp p > sup{
+    font-size: 3rem;
+    color: rgb(224, 224, 224);
+}
+
+.weather-icon{
+    font-size: 2.4rem;
+}
+
+.humidity-wind-container {
+  /* border: 1px solid red; */
+  position: relative;
+  z-index: 999;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 10px;
+  color: white;
+  margin-top: 1.1rem;
+}
+
+/* .wind,
+.humidity {
+  border: 1px solid rgb(253, 253, 253);
+} */
+
+.humidity {
+  font-size: 1.6rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: rgb(184, 184, 184);
+}
+
+.humidity :nth-child(1) {
+  color: white;
+  font-size: 1.6rem;
+}
+
+.humidity :nth-child(2) {
+  font-size: 1.2rem;
+}
+
+
+@media screen and (max-width: 1330px) {
+    .india-popular-places-weather,
+    .world-polular-places-weather {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media screen and (max-width: 880px) {
+      .india-popular-places-weather,
+      .world-polular-places-weather {
+        grid-template-columns: 1fr;
+      }
+
+    }
