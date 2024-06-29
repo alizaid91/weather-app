@@ -1,5 +1,4 @@
-import { showCurretLocationWeatherData } from "../scripts/search_weather.js";
-import {fetchWeather , weatherIconMapping } from "../scripts/search_weather.js";
+import { showCurretLocationWeatherData , fetchWeather , weatherIconMapping} from "../scripts/search_weather.js";
 import { convertUnixTimestampToReadableFormat } from "../scripts/time_converter.js";
 // import './weather.js'
 
@@ -37,7 +36,7 @@ const data = fetchWeather(
   "Paris"
 );
 data.then((data) => {
-  console.log(data);
+  // console.log(data);
   for (let i = 0; i < data.length; i++) {
     const unixTimestamp = parseInt(data[i].dt);
     const timeZone = data[i].timezone
@@ -50,7 +49,8 @@ data.then((data) => {
               <div class="${cityBackground[i].cityName} weather-card">
                 <div class="city-name-time">
                     <p>${date[0]}</p>
-                    <h1>${data[i].name}</h1>
+                    <h1>${data[i].name}<span>${data[i].sys.country}</span></h1>
+                    <span>${data[i].weather[0].main}</span>
                 </div>
                 <div class="temp">
                     <p>${Math.round(
@@ -59,23 +59,21 @@ data.then((data) => {
                     <i class="wi ${weatherIconClass} weather-icon"></i>
                 </div>
                 <div class="humidity-wind-container">
-                    <div class="humidity">
-                        Wind:
+                    <div class="wind">
+                        <span>
+                            Wind:
+                        </span>
                         <span class="humidity-value" >${
                           data[i].wind.speed
-                        }</span>
-                        <span>
-                            km/h
-                        </span>
+                        } km/h</span>
                     </div>
                     <div class="humidity">
+                    <span>
                         Humidity:
+                        </span>
                         <span class="humidity-value">${
                           data[i].main.humidity
-                        }</span>
-                        <span>
-                            %
-                        </span>
+                        }%</span>
                     </div>
                 </div>
             </div>
@@ -101,11 +99,6 @@ searchButton.addEventListener("click", () => {
     document.querySelector("#city-name").value = "";
   }
 });
-
-const hsh = showCurretLocationWeatherData()
-hsh.then((data) => {
-  console.log(data)
-})
 
 // document.addEventListener("DOMContentLoaded", () => {
 //   const data = showCurretLocationWeatherData();

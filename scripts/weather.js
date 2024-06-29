@@ -42,7 +42,7 @@ data.then((data) => {
                       <p>${Math.round(
                         data[0].main.temp - 273.15
                       )}<sup>o</sup>C</p>
-                      <p>Cloudy</p>
+                      <p>${data[0].weather[0].main}</p>
                   </div>
                   <div>
                       <i class="wi ${weatherIconClass} weather-icon"></i>

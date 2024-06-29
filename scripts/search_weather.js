@@ -20,16 +20,6 @@ export async function fetchWeather(...cities) {
 }
 
 // Function to fetch weather by user location
-async function getUserLocation() {
-  return new Promise((resolve, reject) => {
-      if (navigator.geolocation) {
-          navigator.geolocation.getCurrentPosition(resolve, reject);
-      } else {
-          reject(new Error("Geolocation is not supported by this browser."));
-      }
-  });
-}
-
 export async function showCurretLocationWeatherData() {
   try {
       const userLocation = await getUserLocation();
@@ -53,6 +43,16 @@ export async function showCurretLocationWeatherData() {
       return { error: error.message };
   }
 }
+
+async function getUserLocation() {
+    return new Promise((resolve, reject) => {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(resolve, reject);
+        } else {
+            reject(new Error("Geolocation is not supported by this browser."));
+        }
+    });
+  }
 
 export const weatherIconMapping = {
   "01d": "wi-day-sunny",

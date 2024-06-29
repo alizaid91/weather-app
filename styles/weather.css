@@ -68,6 +68,7 @@ body {
   cursor: pointer;
   transition: scale 0.65s, background-color 0.15s;
   /* border: 1px solid red; */
+  margin-right: 1rem;
 
 }
 
@@ -191,7 +192,7 @@ body {
 .humidity-wind div {
   font-size: 1.2rem;
   /* font-weight: bold; */
-  color: rgb(199, 251, 255);
+  color: rgb(209, 209, 209);
   display: flex;
 }
 
